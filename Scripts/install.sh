@@ -167,8 +167,9 @@ EOF
             print_log -sec "$((i + 1))" " ${aurList[$i]} "
         done
 
-        prompt_timer 120 "Enter option number [default: yay-bin] | q to quit "
-
+        # prompt_timer 120 "Enter option number [default: yay-bin] | q to quit "
+        PROMPT_INPUT="yay"
+        
         case "${PROMPT_INPUT}" in
         1) export getAur="yay" ;;
         2) export getAur="paru" ;;
@@ -195,7 +196,8 @@ EOF
         for i in "${!shlList[@]}"; do
             print_log -sec "$((i + 1))" " ${shlList[$i]} "
         done
-        prompt_timer 120 "Enter option number [default: zsh] | q to quit "
+        # prompt_timer 120 "Enter option number [default: zsh] | q to quit "
+        PROMPT_INPUT="zsh"
 
         case "${PROMPT_INPUT}" in
         1) export myShell="zsh" ;;
@@ -339,13 +341,14 @@ if [ $flg_Install -eq 1 ] ||
         print_log -warn "Please reboot the system to apply new changes."
     fi
 
-    print_log -stat "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. Do you want to reboot the system? (y/N)"
-    read -r answer
+    print_log -stat "HyDE" "Installation complete"
+    # print_log -stat "HyDE" "It is not recommended to use newly installed or upgraded HyDE without rebooting the system. Do you want to reboot the system? (y/N)"
+    # read -r answer
 
-    if [[ "$answer" == [Yy] ]]; then
-        echo "Rebooting system"
-        systemctl reboot
-    else
-        echo "The system will not reboot"
-    fi
+    # if [[ "$answer" == [Yy] ]]; then
+    #     echo "Rebooting system"
+    #     systemctl reboot
+    # else
+    #     echo "The system will not reboot"
+    # fi
 fi

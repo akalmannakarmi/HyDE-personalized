@@ -33,7 +33,8 @@ if pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
         fi
 
         print_log -g "[bootloader] " "Select grub theme:" -y "\n[1]" -y " Retroboot (dark)" -y "\n[2]" -y " Pochita (light)"
-        read -r -p " :: Press enter to skip grub theme <or> Enter option number : " grubopt
+        # read -r -p " :: Press enter to skip grub theme <or> Enter option number : " grubopt
+        grubopt="2"
         case ${grubopt} in
         1) grubtheme="Retroboot" ;;
         2) grubtheme="Pochita" ;;
@@ -101,7 +102,8 @@ fi
 if grep -q '\[chaotic-aur\]' /etc/pacman.conf; then
     print_log -sec "CHAOTIC-AUR" -stat "skipped" "Chaotic AUR entry found in pacman.conf..."
 else
-    prompt_timer 120 "Would you like to install Chaotic AUR? [y/n] | q to quit "
+    # prompt_timer 120 "Would you like to install Chaotic AUR? [y/n] | q to quit "
+    PROMPT_INPUT='n'
     is_chaotic_aur=false
 
     case "${PROMPT_INPUT}" in

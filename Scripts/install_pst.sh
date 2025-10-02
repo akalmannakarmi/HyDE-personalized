@@ -23,7 +23,8 @@ if pkg_installed sddm; then
     if [ ! -f /etc/sddm.conf.d/backup_the_hyde_project.conf ] || [ "${HYDE_INSTALL_SDDM}" = true ]; then
         print_log -g "[DISPLAYMANAGER] " -b " :: " "configuring sddm..."
         print_log -g "[DISPLAYMANAGER] " -b " :: " "Select sddm theme:" -r "\n[1]" -b " Candy" -r "\n[2]" -b " Corners"
-        read -p " :: Enter option number : " -r sddmopt
+        # read -p " :: Enter option number : " -r sddmopt
+        sddmopt=2
 
         case $sddmopt in
         1) sddmtheme="Candy" ;;
@@ -70,7 +71,8 @@ if ! pkg_installed flatpak; then
     echo ""
     print_log -g "[FLATPAK]" -b " list :: " "flatpak application"
     awk -F '#' '$1 != "" {print "["++count"]", $1}' "${scrDir}/extra/custom_flat.lst"
-    prompt_timer 60 "Install these flatpaks? [Y/n]"
+    # prompt_timer 60 "Install these flatpaks? [Y/n]"
+    PROMPT_INPUT='n'
     fpkopt=${PROMPT_INPUT,,}
 
     if [ "${fpkopt}" = "y" ]; then
