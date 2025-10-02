@@ -92,4 +92,4 @@ install_packages() {
 echo ""
 install_packages archPkg "arch" "sudo pacman"
 echo ""
-install_packages aurhPkg "aur" "${aurhlpr}"
+install_packages aurhPkg "aur" "${aurhlpr} --noconfirm"

@@ -94,7 +94,7 @@ fi
 # set shell
 if [[ "$(grep "/${USER}:" /etc/passwd | awk -F '/' '{print $NF}')" != "${myShell}" ]]; then
     print_log -sec "SHELL" -stat "change" "shell to ${myShell}..."
-    [ ${flg_DryRun} -eq 1 ] || chsh -s "$(which "${myShell}")"
+    [ ${flg_DryRun} -eq 1 ] || sudo usermod --shell "$(which "${myShell}")" "$USER"
 else
     print_log -sec "SHELL" -stat "exist" "${myShell} is already set as shell..."
 fi
