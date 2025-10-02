@@ -106,7 +106,7 @@ lutris                                                  # for games
 
 docker                                                  # virtualization
 postman-bin                                             # for api testing
-beekeeper-studio                                        # for database viewer
+# beekeeper-studio                                        # for database viewer
 neovim                                                  # good editor
 obs-studio                                              # screen recorder
 gimp                                                    # for drawing things
