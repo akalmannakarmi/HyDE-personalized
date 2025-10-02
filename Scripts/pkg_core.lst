@@ -49,10 +49,12 @@ pacman-contrib                                         # for system update check
 parallel                                               # for parallel processing
 jq                                                     # for json processing
 imagemagick                                            # for image processing
+qt6-multimedia-ffmpeg                                  # for idk
 qt5-imageformats                                       # for dolphin image thumbnails
 ffmpegthumbs                                           # for dolphin video thumbnails
 kde-cli-tools                                          # for dolphin file type defaults
 libnotify                                              # for notifications
+noto-fonts                                             # fonts
 noto-fonts-emoji                                       # emoji font
 
 # --------------------------------------------------- // Theming

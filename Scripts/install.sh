@@ -168,7 +168,7 @@ EOF
         done
 
         # prompt_timer 120 "Enter option number [default: yay-bin] | q to quit "
-        PROMPT_INPUT="yay"
+        PROMPT_INPUT=1
         
         case "${PROMPT_INPUT}" in
         1) export getAur="yay" ;;
