@@ -103,7 +103,7 @@ if grep -q '\[chaotic-aur\]' /etc/pacman.conf; then
     print_log -sec "CHAOTIC-AUR" -stat "skipped" "Chaotic AUR entry found in pacman.conf..."
 else
     # prompt_timer 120 "Would you like to install Chaotic AUR? [y/n] | q to quit "
-    PROMPT_INPUT='n'
+    PROMPT_INPUT='y'
     is_chaotic_aur=false
 
     case "${PROMPT_INPUT}" in
