@@ -92,4 +92,4 @@ install_packages() {
 echo ""
 install_packages archPkg "arch" "sudo pacman --noconfirm"
 echo ""
-install_packages aurhPkg "aur" "${aurhlpr} --noconfirm"
+install_packages aurhPkg "aur" "${aurhlpr} --noconfirm --gitflags "--depth=1""
