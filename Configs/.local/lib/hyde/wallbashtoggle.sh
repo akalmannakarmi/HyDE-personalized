@@ -48,7 +48,7 @@ case "${1}" in
 m | -m | --menu) rofi_wallbash ;;
 n | -n | --next) step_wallbash n ;;
 p | -p | --prev) step_wallbash p ;;
-*) step_wallbash n ;;
+*) setMode="${1}" ;;
 esac
 
 export reload_flag=1
