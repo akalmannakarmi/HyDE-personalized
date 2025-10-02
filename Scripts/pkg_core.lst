@@ -87,3 +87,27 @@ fastfetch                                              # system information fetc
 
 # --------------------------------------------------- // HyDE
 hypridle                                               # idle daemon
+
+
+# --------------------------------------------------- // My Preference
+openssh                                                 # remote access
+sshfs                                                   # for remote filesystem
+btop                                                    # performance monitoring
+bat                                                     # enhanced version of cat
+eza                                                     # file lister for zsh
+duf                                                     # prettier version of df for zsh
+ncdu                                                    # disk usage monitoring
+
+opera                                                   # fav browser
+brave                                                   # save & private browser
+vesktop                                                 # for comms
+steam                                                   # for games
+lutris                                                  # for games
+
+docker                                                  # virtualization
+postman-bin                                             # for api testing
+beekeeper-studio                                        # for database viewer
+neovim                                                  # good editor
+obs-studio                                              # screen recorder
+gimp                                                    # for drawing things
+inkscape                                                # for vector art
