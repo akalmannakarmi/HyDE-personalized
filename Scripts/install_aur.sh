@@ -37,7 +37,7 @@ fi
 
 cd "$HOME/Clone/${aurhlpr}" || exit
 # shellcheck disable=SC2154
-if makepkg "${use_default}" -si; then
+if makepkg "--noconfirm" -si; then
     print_log -sec "AUR" -stat "installed" "${aurhlpr} aur helper..."
     exit 0
 else
