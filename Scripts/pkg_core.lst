@@ -97,6 +97,7 @@ bat                                                     # enhanced version of ca
 eza                                                     # file lister for zsh
 duf                                                     # prettier version of df for zsh
 ncdu                                                    # disk usage monitoring
+wget                                                    # downloading stuff
 
 opera                                                   # fav browser
 brave                                                   # save & private browser
