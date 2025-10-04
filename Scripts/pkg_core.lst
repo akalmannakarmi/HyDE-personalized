@@ -93,6 +93,7 @@ hypridle                                               # idle daemon
 openssh                                                 # remote access
 sshfs                                                   # for remote filesystem
 btop                                                    # performance monitoring
+fish                                                    # required for bat eza duf
 bat                                                     # enhanced version of cat
 eza                                                     # file lister for zsh
 duf                                                     # prettier version of df for zsh
@@ -100,11 +101,12 @@ ncdu                                                    # disk usage monitoring
 wget                                                    # downloading stuff
 
 opera                                                   # fav browser
-brave                                                   # save & private browser
+# brave                                                   # save & private browser
 vesktop                                                 # for comms
 steam                                                   # for games
 lutris                                                  # for games
 
+mambaforge                                              # python virtualization
 docker                                                  # virtualization
 postman-bin                                             # for api testing
 # beekeeper-studio                                        # for database viewer
