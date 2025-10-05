@@ -34,7 +34,7 @@ if pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
 
         print_log -g "[bootloader] " "Select grub theme:" -y "\n[1]" -y " Retroboot (dark)" -y "\n[2]" -y " Pochita (light)"
         # read -r -p " :: Press enter to skip grub theme <or> Enter option number : " grubopt
-        grubopt="2"
+        grubopt="1"
         case ${grubopt} in
         1) grubtheme="Retroboot" ;;
         2) grubtheme="Pochita" ;;
