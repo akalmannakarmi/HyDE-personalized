@@ -106,7 +106,7 @@ vesktop                                                 # for comms
 steam                                                   # for games
 lutris                                                  # for games
 
-minifore                                                # python virtualization
+miniforge                                               # python virtualization
 docker                                                  # virtualization
 postman-bin                                             # for api testing
 beekeeper-studio-bin                                    # for database viewer
