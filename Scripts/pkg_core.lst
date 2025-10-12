@@ -99,6 +99,8 @@ eza                                                     # file lister for zsh
 duf                                                     # prettier version of df for zsh
 ncdu                                                    # disk usage monitoring
 wget                                                    # downloading stuff
+openresolv                                              # for VPN
+wireguard-tools                                         # for VPN
 
 opera                                                   # fav browser
 brave-bin                                               # save & private browser
