@@ -21,23 +21,15 @@ if pkg_installed sddm; then
         [ ${flg_DryRun} -eq 1 ] || sudo mkdir -p /etc/sddm.conf.d
     fi
     if [ ! -f /etc/sddm.conf.d/backup_the_hyde_project.conf ] || [ "${HYDE_INSTALL_SDDM}" = true ]; then
-        print_log -g "[DISPLAYMANAGER] " -b " :: " "configuring sddm..."
-        print_log -g "[DISPLAYMANAGER] " -b " :: " "Select sddm theme:" -r "\n[1]" -b " Candy" -r "\n[2]" -b " Corners"
-        read -p " :: Enter option number : " -r sddmopt
-
-        case $sddmopt in
-        1) sddmtheme="Candy" ;;
-        *) sddmtheme="Corners" ;;
-        esac
-
+        print_log -g "[DISPLAYMANAGER] " -b " :: " "configuring sddm with Corners theme..."
         if [[ ${flg_DryRun} -ne 1 ]]; then
-            sudo tar -xzf "${cloneDir}/Source/arcs/Sddm_${sddmtheme}.tar.gz" -C /usr/share/sddm/themes/
+            sudo tar -xzf "${cloneDir}/Source/arcs/Sddm_Corners.tar.gz" -C /usr/share/sddm/themes/
             sudo touch /etc/sddm.conf.d/the_hyde_project.conf
             sudo cp /etc/sddm.conf.d/the_hyde_project.conf /etc/sddm.conf.d/backup_the_hyde_project.conf
-            sudo cp /usr/share/sddm/themes/${sddmtheme}/the_hyde_project.conf /etc/sddm.conf.d/
+            sudo cp /usr/share/sddm/themes/Corners/the_hyde_project.conf /etc/sddm.conf.d/
         fi
 
-        print_log -g "[DISPLAYMANAGER] " -b " :: " "sddm configured with ${sddmtheme} theme..."
+        print_log -g "[DISPLAYMANAGER] " -b " :: " "sddm configured with Corners theme..."
     else
         print_log -y "[DISPLAYMANAGER] " -b " :: " "sddm is already configured..."
     fi
@@ -66,20 +58,8 @@ fi
 "${scrDir}/restore_shl.sh"
 
 # flatpak
-if ! pkg_installed flatpak; then
-    echo ""
-    print_log -g "[FLATPAK]" -b " list :: " "flatpak application"
-    awk -F '#' '$1 != "" {print "["++count"]", $1}' "${scrDir}/extra/custom_flat.lst"
-    prompt_timer 60 "Install these flatpaks? [Y/n]"
-    fpkopt=${PROMPT_INPUT,,}
-
-    if [ "${fpkopt}" = "y" ]; then
-        print_log -g "[FLATPAK]" -b " install :: " "flatpaks"
-        [ ${flg_DryRun} -eq 1 ] || "${scrDir}/extra/install_fpk.sh"
-    else
-        print_log -y "[FLATPAK]" -b " skip :: " "flatpak installation"
-    fi
-
-else
+if pkg_installed flatpak; then
     print_log -y "[FLATPAK]" -b " :: " "flatpak is already installed"
+else
+    print_log -y "[FLATPAK]" -b " skip :: " "flatpak installation"
 fi

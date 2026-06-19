@@ -237,17 +237,13 @@ done
 
 case "$1" in
 --install)
-    if [ "$2" == "fresh" ]; then fresh; fi
-    if check_Integrity >/dev/null; then
-        echo "Chaotic AUR already installed. Would you like a reinstall? [y/N]"
-        read ans
-        if [ "$ans" != "Y" ] && [ "$ans" != "y" ]; then
-            echo "Chaotic AUR: Operation Cancelled."
-            exit 0
-        fi
-    fi
-    install
-    ;;
+	if [ "$2" == "fresh" ]; then fresh; fi
+	if check_Integrity >/dev/null; then
+		echo "Chaotic AUR already installed. Skipping reinstall."
+		exit 0
+	fi
+	install
+	;;
 --uninstall)
     purge
     revertAUR
